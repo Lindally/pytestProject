@@ -5,8 +5,12 @@ import yaml
 """
 
 
-def get_datas():
+def get_datas(name, type="int"):
     with open("./datas/calc.yml") as f:
-        datas = yaml.safe_load(f)
-        # print("datas")
-        return datas["add"]["data"],datas["add"]["ids"],datas["div"]["data"],datas["div"]["ids"]
+        all_datas = yaml.safe_load(f)
+        return all_datas[name][type]["data"],all_datas[name][type]["ids"]
+        # print(all_datas)
+        # return datas["add"]["data"],datas["add"]["ids"],datas["div"]["data"],datas["div"]["ids"]
+
+
+
